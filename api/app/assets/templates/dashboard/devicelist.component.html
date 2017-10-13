@@ -1,0 +1,35 @@
+<section class="device-list-container-inner">
+  <div class="device-list-logo">
+    <img src="assets/img/" alt="Main Logo">
+  </div>
+  <div *ngIf="!devices" style="text-align: center; padding: 1em;">Loading Devices...</div>
+  <div class="device-list-devices" *ngIf="devices">
+    <ul>
+      <!-- <div class="select-customer-container">
+        <label for="customer">Filter by Customer</label>
+        <select name="customer" id="customer" [(ngModel)]="selectCustomer">
+          <option value="All">All</option>
+          <option *ngFor="let customer of customerNames" [value]="customer">{{customer}}</option>
+        </select>
+      </div> -->
+      <ng-container *ngIf="customerNames.length > 1">
+        <div class="select-client-devices">
+          <h5>Filter by Account</h5>
+          <li (click)="selectCustomerValue('All')" [class.selected-customer]="selectCustomer === 'All'">All</li>
+          <li *ngFor="let customer of customerNames" [class.selected-customer]="selectCustomer === customer" (click)="selectCustomerValue(customer)">{{customer}}</li>
+        </div>
+      </ng-container>
+      <input type="text" [(ngModel)]="selectCustomer" style="visibility: hidden; margin: 0; padding: 0;">
+      <h4><span>{{filteredList.length}}</span> Devices</h4>
+      <input type="text" name="devicesn" class="device-list-filter" [(ngModel)]="filter.serialNumber" placeholder="Filter by SN" (keyup)="return">
+      <ng-container *ngFor="let device of devices | devicelistfilter:filter">
+        <ng-container *ngIf="filterDeviceByCustomerName(device)">
+          <li [routerLink]="['/dashboard', device.id]" routerLinkActive="active" #numDevices>SN: {{ device.serialNumber }} </li>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </div>
+</section>
+<div class="request-error" *ngIf="requestError">
+  <p>{{requestError}}</p>
+</div>

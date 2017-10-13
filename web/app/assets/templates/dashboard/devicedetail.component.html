@@ -1,0 +1,19 @@
+<header>
+  <!-- <h3>{{ pageTitle | uppercase }}</h3> -->
+  <a href="" (click)="logout()">Logout</a>
+</header>
+<section class="device-detail-container-inner">
+  <div class="device-detail-large-image" *ngIf="!device">
+    <img src="assets/img/spire-logo-gray.svg" alt="">
+  </div>
+  <div class="device-detail-device" *ngIf="device">
+    <h4>Device Information</h4>
+    <!-- <p><span>Device ID</span><br>{{device.id}}</p> -->
+    <p><span>Customer Name</span><br>{{device.customer.name}}</p>
+    <p><span>Carrier</span><br>{{device.carrier}}</p>
+    <!-- <p><span>Customer ID</span><br>{{device.customer.id}}</p> -->
+    <p><span>Description</span><br>{{device.description}}</p>
+    <p><span>Serial Number</span><br>{{device.serialNumber}}</p>
+  </div>
+
+</section>

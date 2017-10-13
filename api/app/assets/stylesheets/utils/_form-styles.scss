@@ -1,0 +1,43 @@
+form {
+  color: $alabaster;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 0 auto 1em;
+  padding: 0.7em 1.3em;
+  border-radius: 4em;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+label {
+  color: $cadet-blue;
+  display: block;
+  text-align: left;
+  padding: 0 1em;
+}
+
+input[type="submit"] {
+  background-color: $action-button-bg;
+  @include basic-transition;
+  &:hover {
+    cursor: pointer;
+    background-color: saturate($action-button-bg, 100%);
+  }
+}

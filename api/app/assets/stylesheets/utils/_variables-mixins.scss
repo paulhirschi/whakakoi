@@ -1,0 +1,55 @@
+/** Sass color functions
+
+darken(color, %)
+lighten(color, %)
+
+saturate(color, %)
+desaturage(color, %)
+
+adjust-hue(color, %)
+
+rgba(color, 0.5)
+
+tint(color, %)
+shade(color, %)
+
+*/
+
+// Main color palette
+$white:          hsl(0, 0%, 100%);
+$alabaster:      hsl(220, 33%, 98%);
+$aqua-haze:      hsl(200, 46%, 95%);
+$athens-gray:    hsl(210, 19%, 94%);
+$link-water:     hsl(221, 20%, 82%);
+$heather:        hsl(211, 17%, 76%);
+$cadet-blue:     hsl(223, 19%, 75%);
+$fiord:          hsl(212, 9%,  35%);
+$trout:          hsl(223, 11%, 33%);
+$black-pearl:    hsl(223, 27%, 15%);
+$burnt-sienna:   hsl(13,  77%, 64%);
+$celestial-blue: hsl(207, 65%, 58%);
+$emerald:        hsl(146, 47%, 54%);
+
+// Button colors
+$action-button-bg: $celestial-blue;
+$warning-button-bg: $burnt-sienna;
+
+// 'Raleway', 'Open Sans', 'Quicksand'
+
+@mixin title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+
+@mixin copy {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+@mixin radius {
+  border-radius: 10px;
+}
+
+@mixin basic-transition {
+  transition: all 0.4s;
+}

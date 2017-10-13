@@ -1,0 +1,12 @@
+GET        /                                      controllers.Application.index
+
+POST       /auth/authenticate                     controllers.AuthController.authenticate
+
+GET        /api                                   controllers.ApiController.api
+GET        /api/user/:id                          controllers.UserController.getUser(id: Long)
+POST       /api/user/invitation                   controllers.UserController.createInvite
+
+GET        /assets/*file                          controllers.Assets.versioned(path="/public", file: Asset)
+# GET        /webjars/*file                       controllers.WebJarAssets.at(file)
+
+GET        /*others                               controllers.Application.other(others)

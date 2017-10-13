@@ -1,0 +1,18 @@
+<form action="" class="login-form">
+  <hr>
+  <p>Request Access</p>
+  <label for="name">Full Name</label>
+  <input type="text" name="name" autofocus autocomplete="false">
+  <label for="email">Email</label>
+  <input type="email" name="email" autocomplete="false">
+  <label for="requestSubmit">Send Request</label>
+  <input type="submit" name="requestSubmit" value="" (click)="toDashboard()"/>
+</form>
+<section *ngIf="joinRequestSent">
+  <h4>Thank You</h4>
+  <p>You will receive an email soon<br>regarding your request to join.</p>
+</section>
+<div class="login-form-admin">
+  <a class="muted" routerLink="/login">Login</a>
+  <!-- <a class="muted" routerLink="/forgotpassword">Forgot Password : (</a> -->
+</div>

@@ -1,0 +1,35 @@
+@import "variables-mixins";
+
+*, *:before, *:after {box-sizing: border-box;}
+*:focus {outline: 0;}
+
+html {font-size: 1em; height: 100%;}
+
+body {
+  @include copy;
+  line-height: 1.45;
+  color: $trout;
+  height: 100%;
+}
+
+p {margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  @include title;
+  // margin: 1.414em 0 0.5em;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+
+h2 {font-size: 2.827em;}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+small, .font_small {font-size: 0.707em;}
+
+.muted {color: $fiord}
